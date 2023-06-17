@@ -23,31 +23,60 @@
         <button class="btn btn-success" type="submit">Agregar</button>
       </div><br>
 
+      <div class="contenedor_creados" style="margin-top: 3%;">
+        <h4>Listado de estudiantes registrados: </h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"> #</th>
+              <th scope="col"> Cédula</th>
+              <th scope="col"> Nombre</th>
+              <th scope="col"> Apellido</th>
+              <th scope="col"> Fecha de Nacimiento</th>
+              <th scope="col"> Edad</th>
+              <th scope="col"> Funciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let estudiante of listaPersonas let i=index">
+              <th>{{ i + 1 }}</th>
+              <th>{{estudiante.cedula}}</th>
+              <th>{{estudiante.nombre}}</th>
+              <th>{{estudiante.apellido}}</th>
+              <th>{{estudiante.fechaNacimiento}}</th>
+              <th>{{estudiante.edad}}</th>
+              <th><i class="bi bi-x-lg" (click)="eliminarPersona(i, estudiante)"></i></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="contenedor_creados" style="margin-top: 3%;">
+        <h4>Listado de estudiantes eliminados: </h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"> #</th>
+              <th scope="col"> Cédula</th>
+              <th scope="col"> Nombre</th>
+              <th scope="col"> Apellido</th>
+              <th scope="col"> Fecha de Nacimiento</th>
+              <th scope="col"> Edad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let estudiante of listapersonasEliminadas let i=index">
+              <th>{{ i + 1 }}</th>
+              <th>{{estudiante.cedula}}</th>
+              <th>{{estudiante.nombre}}</th>
+              <th>{{estudiante.apellido}}</th>
+              <th>{{estudiante.fechaNacimiento}}</th>
+              <th>{{estudiante.edad}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <table class="table table-striped" style="margin-top: 3%;">
-        <thead>
-          <tr>
-            <th scope="col"> #</th>
-            <th scope="col"> Cédula</th>
-            <th scope="col"> Nombre</th>
-            <th scope="col"> Apellido</th>
-            <th scope="col"> Fecha de Nacimiento</th>
-            <th scope="col"> Edad</th>
-            <th scope="col"> Funciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let estudiante of listaPersonas let i=index">
-            <th>{{ i + 1 }}</th>
-            <th>{{estudiante.cedula}}</th>
-            <th>{{estudiante.nombre}}</th>
-            <th>{{estudiante.apellido}}</th>
-            <th>{{estudiante.fechaNacimiento}}</th>
-            <th>{{estudiante.edad}}</th>
-            <th><i class="bi bi-x-lg" (click)="eliminarPersona(i)"></i></th>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </form>

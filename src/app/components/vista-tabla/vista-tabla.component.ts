@@ -15,6 +15,7 @@ export class VistaTablaComponent implements OnInit{
   fechaNacimiento ="";
   edad ="";
   listaPersonas: Personas[] = [];
+  listapersonasEliminadas: Personas[] = [];
 
   ngOnInit(): void{
     this.form = new FormGroup({
@@ -39,7 +40,9 @@ export class VistaTablaComponent implements OnInit{
     console.log(personas);
   }
 
-  eliminarPersona(indice: number): void{
+  eliminarPersona(indice: number, personas: Personas): void{
+    this.listapersonasEliminadas.push(personas);
+    console.log(this.listapersonasEliminadas);
     this.listaPersonas.splice(indice, 1);
   }
 }
