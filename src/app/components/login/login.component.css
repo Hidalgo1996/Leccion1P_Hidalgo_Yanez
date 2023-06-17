@@ -1,0 +1,24 @@
+.dropdown-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    background-color: rgb(199, 229, 235)
+}
+
+.container{
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+.form-label{
+    font-weight: bold;
+}
+.dropdown-menu{
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.53);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.53);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.53);
+}
